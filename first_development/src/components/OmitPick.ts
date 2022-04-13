@@ -1,25 +1,26 @@
-import React from 'react';
+import React from 'react'
 
+//TODO Pickはtypeから取り出す。Omitはtypeから排除する。
 type User = {
-    id: string
-    name: string
-    email: string
-    address: string
+  id: string
+  name: string
+  email: string
+  address: string
 }
 
 // PICKは選択する
-type UserItemPick = Pick<User, "name" | "email">
+type UserItemPick = Pick<User, 'name' | 'email'>
 
 // Omitはそれ以外
-type UserItemOmit = Omit<User, "id" | "address">
+type UserItemOmit = Omit<User, 'id' | 'address'>
 
 const userPick: UserItemPick = {
-    name: "hoge",
-    email: "hoge@example.com",
+  name: 'hoge',
+  email: 'hoge@example.com',
 }
 const userOmit: UserItemOmit = {
-    name: "hoge",
-    email: "fuga",
+  name: 'hoge',
+  email: 'fuga',
 }
 
 console.log(userPick, userOmit)
