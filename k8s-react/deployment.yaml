@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-k8s
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: react-k8s
+  template:
+    metadata:
+      labels:
+        app: react-k8s
+    spec:
+      containers:
+        - name: react-k8s
+          image: react/mamushi:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+          command: ["yarn", "start"]
